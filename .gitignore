@@ -33,7 +33,7 @@ MANIFEST
 *.manifest
 *.spec
 poetry.lock
-.replit
+
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
