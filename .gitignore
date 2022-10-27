@@ -32,12 +32,14 @@ MANIFEST
 #  before PyInstaller builds the exe, so as to inject date/other infos into it.
 *.manifest
 *.spec
-
+poetry.lock
+.replit
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
 
 # Unit test / coverage reports
+*.toml
 htmlcov/
 .tox/
 .nox/
@@ -109,7 +111,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-
+replit.nix
 # Spyder project settings
 .spyderproject
 .spyproject
