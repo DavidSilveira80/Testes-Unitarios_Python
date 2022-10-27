@@ -4,6 +4,7 @@ Práticas de testes unitários.
 ## Para executar os testes:
 Se for executar localmente com sua IDE:
 Instale o pytest via -> pip install pytest
+E rode os testes: pytest -v <arquivo.py>
 
 Se for executar no replit:
 Abra o shell : -> python3 <arquivo.py>
