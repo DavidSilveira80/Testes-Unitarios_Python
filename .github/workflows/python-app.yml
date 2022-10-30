@@ -26,3 +26,4 @@ jobs:
         if: always()
         run: |
           pytest -v FizzBuzz.py
+          pytest -v contando_letras_numeros.py
