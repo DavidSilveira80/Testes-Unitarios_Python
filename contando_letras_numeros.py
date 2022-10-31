@@ -112,7 +112,6 @@ def gera_palavras(num):
             else:
                 resp = [cem_novecentos_palavra(numero[0]), vinte_noventa_palavra(numero[1]),
                         um_nove_palavra(numero[2])]
-
     elif tamanho_algarismo(numero) == 4:
         resp = [mil_palavra(numero)]
     return resp
