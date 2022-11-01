@@ -6,7 +6,7 @@ Se os números de 1 a 5 fossem escritos em palavras:
 um, dois, três, quatro, cinco, então t
 teríamos utilizado 2 + 4 + 4 + 6 + 5 = 21 letras no total.
 
-Se todos os números de 1 até 1000 fossem escritos em palavras,
+Se todos os números de 1 até 1000 fossem escritos em palavras, incluindo a letra 'e' (ex: Cento e Cinquenta),
 quantas letras nós teríamos utilizado?
 """
 numeros = range(1, 1001)
@@ -25,7 +25,6 @@ def um_nove_palavra(unidade: str) -> str:
     algarismo = converte_para_string(unidade)
     unnove = {'1': 'Um', '2': 'Dois', '3': 'Três', '4': 'Quatro',
               '5': 'Cinco', '6': 'Seis', '7': 'Sete', '8': 'Oito',  '9': 'Nove'}
-
 
     if algarismo in unnove:
         return unnove[algarismo]
@@ -76,7 +75,6 @@ def gera_palavras(num: int) -> list:
             resp = [dez_dezenove_palavra(numero)]
         else:
             previa = [vinte_noventa_palavra(numero[0]), um_nove_palavra(numero[1])]
-
             if None in previa:
                 previa.remove(None)
                 resp = previa
@@ -127,9 +125,17 @@ def conta_letras_palavras(palavras: str) -> int:
     return len(palavras)
 
 
-for num in numeros:
-    print(num, concatena_palavras(gera_palavras(num)),
-          conta_letras_palavras(concatena_palavras(gera_palavras(num))))
+def contagem_total(numeros: range) -> str:
+    total_letras_palavras = 0
+    for num in numeros:
+        total_letras_palavras += conta_letras_palavras(concatena_palavras(gera_palavras(num)))
+        #print(num, concatena_palavras(gera_palavras(num)),
+              #conta_letras_palavras(concatena_palavras(gera_palavras(num))), total_letras_palavras)
+
+    return f'Total: {total_letras_palavras}'
+
+
+print(contagem_total(numeros))
 
 
 class TestContagemLetras(TestCase):
@@ -204,3 +210,7 @@ class TestContagemLetras(TestCase):
         self.assertEqual(conta_letras_palavras('Dezenove'), 8)
         self.assertEqual(conta_letras_palavras('VinteeUm'), 8)
         self.assertEqual(conta_letras_palavras('CentoeQuarentaeUm'), 17)
+
+    def test_contagem_total_letras(self):
+        self.assertEqual(contagem_total(range(1, 4)), 'Total: 10')  # Range abrange os números 1, 2, 3
+        self.assertEqual(contagem_total(range(1, 5)), 'Total: 16')  # Range abrange os números 1, 2, 3, 4
