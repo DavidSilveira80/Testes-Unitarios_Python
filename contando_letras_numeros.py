@@ -12,25 +12,26 @@ quantas letras nós teríamos utilizado?
 numeros = range(1, 1001)
 
 
-def converte_para_string(algarismo):
+def converte_para_string(algarismo: int) -> str:
     return str(algarismo)
 
 
-def tamanho_algarismo(algarismo):
+def tamanho_algarismo(algarismo: int) -> int:
     algarismo = converte_para_string(algarismo)
     return len(algarismo)
 
 
-def um_nove_palavra(unidade):
+def um_nove_palavra(unidade: str) -> str:
     algarismo = converte_para_string(unidade)
-    unnove = {'1': 'Um', '2': 'Dois', '3': 'Três', '4': 'Quatro', '5':
-        'Cinco', '6': 'Seis', '7': 'Sete', '8': 'Oito',  '9': 'Nove'}
+    unnove = {'1': 'Um', '2': 'Dois', '3': 'Três', '4': 'Quatro',
+              '5': 'Cinco', '6': 'Seis', '7': 'Sete', '8': 'Oito',  '9': 'Nove'}
+
 
     if algarismo in unnove:
         return unnove[algarismo]
 
 
-def dez_dezenove_palavra(dezDezenove):
+def dez_dezenove_palavra(dezDezenove: str) -> str:
     algarismo = converte_para_string(dezDezenove)
     dezdezenove = {'10': 'Dez', '11': 'Onze', '12': 'Doze', '13': 'Treze',
                    '14': 'Quatorze', '15': 'Quinze', '16': 'Dezesseis',
@@ -40,7 +41,7 @@ def dez_dezenove_palavra(dezDezenove):
         return dezdezenove[algarismo]
 
 
-def vinte_noventa_palavra(vinteNoventa):
+def vinte_noventa_palavra(vinteNoventa: str) -> str:
     algarismo = converte_para_string(vinteNoventa)
     vintenoventa = {'2': 'Vinte', '3': 'Trinta', '4': 'Quarenta', '5': 'Cinquenta',
                     '6': 'Sessenta', '7': 'Setenta', '8': 'Oitenta', '9': 'Noventa'}
@@ -49,7 +50,7 @@ def vinte_noventa_palavra(vinteNoventa):
         return vintenoventa[algarismo[0]]
 
 
-def cem_novecentos_palavra(centena):
+def cem_novecentos_palavra(centena: str) -> str:
     algarismo = converte_para_string(centena)
     cemnovecentos = {'1': 'Cem', '2': 'Duzentos', '3': 'Trezentos', '4': 'Quatrocentos',
                      '5': 'Quinhentos', '6': 'Seiscentos', '7': 'Setecentos',
@@ -59,11 +60,11 @@ def cem_novecentos_palavra(centena):
         return cemnovecentos[algarismo[0]]
 
 
-def mil_palavra(milhar):
+def mil_palavra(milhar: str) -> str:
     return 'Mil'
 
 
-def gera_palavras(num):
+def gera_palavras(num: int) -> list:
     numero = converte_para_string(num)
 
     if tamanho_algarismo(numero) == 1:
@@ -117,12 +118,12 @@ def gera_palavras(num):
     return resp
 
 
-def concatena_palavras(palavra):
+def concatena_palavras(palavra: list) -> str:
     resp = 'e'.join(palavra)
     return resp
 
 
-def conta_letras_palavras(palavras):
+def conta_letras_palavras(palavras: str) -> int:
     return len(palavras)
 
 
@@ -142,10 +143,10 @@ class TestContagemLetras(TestCase):
         self.assertEqual(converte_para_string(1000), '1000')
 
     def test_tamanho_algarismo_unidade(self):
-        self.assertEqual(tamanho_algarismo('1'), 1)
-        self.assertEqual(tamanho_algarismo('23'), 2)
-        self.assertEqual(tamanho_algarismo('100'), 3)
-        self.assertEqual(tamanho_algarismo('1000'), 4)
+        self.assertEqual(tamanho_algarismo(1), 1)
+        self.assertEqual(tamanho_algarismo(23), 2)
+        self.assertEqual(tamanho_algarismo(100), 3)
+        self.assertEqual(tamanho_algarismo(1000), 4)
 
     def test_unidade_1_9_palavra(self):
         self.assertEqual(um_nove_palavra('1'), 'Um')
