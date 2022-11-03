@@ -30,3 +30,7 @@ jobs:
         if: always()
         run: |
           pytest -v contando_letras_numeros.py
+      - name: Correção do desafio Entre Letras
+        if: always()
+        run: |
+          pytest -v entre_letras.py
