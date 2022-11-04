@@ -25,11 +25,11 @@ jobs:
       - name: Correção do desafio FizzBuzz
         if: always()
         run: |
-          pytest -v FizzBuzz.py
+          pytest -v tests/tests_fizz_buzz.py
       - name: Correção do desafio Contando as letras dos números
         if: always()
         run: |
-          pytest -v contando_letras_numeros.py
+          pytest -v tests/tests_contando_letras_numeros.py
       - name: Correção do desafio Entre Letras
         if: always()
         run: |
