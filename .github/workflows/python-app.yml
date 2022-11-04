@@ -33,4 +33,4 @@ jobs:
       - name: Correção do desafio Entre Letras
         if: always()
         run: |
-          pytest -v entre_letras.py
+          pytest -v tests/entre_letras.py
