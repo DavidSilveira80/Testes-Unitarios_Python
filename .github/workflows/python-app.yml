@@ -34,3 +34,7 @@ jobs:
         if: always()
         run: |
           pytest -v tests/tests_entre_letras.py
+      - name: Correção do desafio criptografia
+        if: always()
+        run: |
+          pytest -v tests/tests_criptografia.py
