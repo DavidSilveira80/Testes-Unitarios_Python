@@ -54,11 +54,10 @@ Texto #3                 3# rvzgV
 abcABC1                  1FECedc
 vxpdylY .ph              ks. \n{frzx
 vv.xwfxo.fd              gi.r{hyz-xx
-
 """
 
 
-def cripto_char(char: str, flag: str, step: int) -> str:
+def criptografa_char(char: str, flag: str, step: int) -> str:
     if flag == 'r':
         cod_ascii = ord(char)
         char_criptografado = chr(cod_ascii + step)
@@ -69,11 +68,11 @@ def cripto_char(char: str, flag: str, step: int) -> str:
     return char_criptografado
 
 
-def cripto_minusculas_maiusculas(texto_entrada: str, flag: str, step: int) -> str:
+def criptografa_minusculas_maiusculas(texto_entrada: str, flag: str, step: int) -> str:
     primeira_pasada_minusculas_maiusculas = ''
     for letra in texto_entrada:
         if letra.isalpha():
-            primeira_pasada_minusculas_maiusculas += cripto_char(letra, flag, step)
+            primeira_pasada_minusculas_maiusculas += criptografa_char(letra, flag, step)
         else:
             primeira_pasada_minusculas_maiusculas += letra
 
@@ -86,3 +85,45 @@ def inverte_texto(texto: str) -> str:
         texto_invertido += texto[-(index + 1)]
 
     return texto_invertido
+
+
+def divide_string(texto: str) -> int:
+    metade_da_string = len(texto) // 2
+    return metade_da_string
+
+
+def particiona_texto(texto: str, flag_metade: int) -> str:
+    if flag_metade == 1:
+        metade_texto = texto[:divide_string(texto)]
+    elif flag_metade == 2:
+        metade_texto = texto[divide_string(texto):]
+    return metade_texto
+
+
+def tres_requisitos(texto):
+    # Primeiro e segundo requisito satisfeito
+    primeira_passada = criptografa_minusculas_maiusculas(texto, 'r', 3)
+    segunda_passada = inverte_texto(primeira_passada)
+
+    # Processamento e conclusão do 3 e ultimo requisito
+    primeira_metade_do_texto = particiona_texto(segunda_passada, 1)
+    segunda_metade_do_texto = particiona_texto(segunda_passada, 2)
+
+    criptografada_segunda_metdade_do_texto_1_esquerda = ''
+    for char in segunda_metade_do_texto:
+        criptografada_segunda_metdade_do_texto_1_esquerda += criptografa_char(char, 'l', 1)
+
+    return primeira_metade_do_texto + criptografada_segunda_metdade_do_texto_1_esquerda
+
+
+"""
+Aqui vai a aplicação do desafio para ser enviado para o Juíz online beecrowd
+
+N = int(input())
+contador = 1
+
+while contador <= N:
+    texto = input()
+    print(tres_requisitos(texto))
+    contador += 1
+"""
