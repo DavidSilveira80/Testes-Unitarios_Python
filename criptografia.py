@@ -78,3 +78,11 @@ def cripto_minusculas_maiusculas(texto_entrada: str, flag: str, step: int) -> st
             primeira_pasada_minusculas_maiusculas += letra
 
     return primeira_pasada_minusculas_maiusculas
+
+
+def inverte_texto(texto: str) -> str:
+    texto_invertido = ''
+    for index in range(len(texto)):
+        texto_invertido += texto[-(index + 1)]
+
+    return texto_invertido
