@@ -39,11 +39,6 @@ Edson
 """
 
 
-def converte_para_lista_de_inteiros(tentativas: list) -> list:
-
-    return [int(tentativas[0]), int(tentativas[1]), int(tentativas[2])]
-
-
 def coleta_tentativas_pontos(tentativas_pontos: list, flag: str) -> int:
     if flag == 's':
         tentativa_ponto = tentativas_pontos[0]
@@ -64,18 +59,16 @@ if __name__ == '__main__':
     contador = 1
     while contador <= N:
         nome = input()
-        tentativas = input().split()
-        pontos = input().split()
-        tentativas_inteiro = converte_para_lista_de_inteiros(tentativas)
-        pontos_inteiro = converte_para_lista_de_inteiros(pontos)
+        tentativas = [int(i) for i in input().split()]
+        pontos = [int(i) for i in input().split()]
 
-        saque_tentativa += coleta_tentativas_pontos(tentativas_inteiro, 's')
-        bloqueio_tentativa += coleta_tentativas_pontos(tentativas_inteiro, 'b')
-        ataque_tentativa += coleta_tentativas_pontos(tentativas_inteiro, 'a')
+        saque_tentativa += coleta_tentativas_pontos(tentativas, 's')
+        bloqueio_tentativa += coleta_tentativas_pontos(tentativas, 'b')
+        ataque_tentativa += coleta_tentativas_pontos(tentativas, 'a')
 
-        saque_ponto += coleta_tentativas_pontos(pontos_inteiro, 's')
-        bloqueio_ponto += coleta_tentativas_pontos(pontos_inteiro, 'b')
-        ataque_ponto += coleta_tentativas_pontos(pontos_inteiro, 'a')
+        saque_ponto += coleta_tentativas_pontos(pontos, 's')
+        bloqueio_ponto += coleta_tentativas_pontos(pontos, 'b')
+        ataque_ponto += coleta_tentativas_pontos(pontos, 'a')
 
         contador += 1
 
