@@ -38,3 +38,7 @@ jobs:
         if: always()
         run: |
           pytest -v tests/tests_criptografia.py
+      - name: Correção do desafio Vôlei
+        if: always()
+        run: |
+          pytest -v tests/tests_volei.py

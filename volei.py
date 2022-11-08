@@ -37,3 +37,56 @@ Edson
 1 2 3
 
 """
+
+
+def converte_para_lista_de_inteiros(tentativas: list) -> list:
+
+    return [int(tentativas[0]), int(tentativas[1]), int(tentativas[2])]
+
+
+def coleta_tentativas_pontos(tentativas_pontos: list, flag: str) -> int:
+    if flag == 's':
+        tentativa_ponto = tentativas_pontos[0]
+    elif flag == 'b':
+        tentativa_ponto = tentativas_pontos[1]
+    elif flag == 'a':
+        tentativa_ponto = tentativas_pontos[2]
+
+    return tentativa_ponto
+
+
+def soma_tentativas_pontos(tentativas_pontos: list) -> int:
+    return sum(tentativas_pontos)
+
+
+if __name__ == '__main__':
+
+    N = int(input())
+
+    saque_tentativa = bloqueio_tentativa = ataque_tentativa = 0
+    saque_ponto = bloqueio_ponto = ataque_ponto = 0
+    contador = 1
+    while contador <= N:
+        nome = input()
+        tentativas = input().split()
+        pontos = input().split()
+        tentativas_inteiro = converte_para_lista_de_inteiros(tentativas)
+        pontos_inteiro = converte_para_lista_de_inteiros(pontos)
+
+        saque_tentativa += coleta_tentativas_pontos(tentativas_inteiro, 's')
+        bloqueio_tentativa += coleta_tentativas_pontos(tentativas_inteiro, 'b')
+        ataque_tentativa += coleta_tentativas_pontos(tentativas_inteiro, 'a')
+
+        saque_ponto += coleta_tentativas_pontos(pontos_inteiro, 's')
+        bloqueio_ponto += coleta_tentativas_pontos(pontos_inteiro, 'b')
+        ataque_ponto += coleta_tentativas_pontos(pontos_inteiro, 'a')
+
+        contador += 1
+
+    porcentagem_saque = (saque_ponto / saque_tentativa) * 100
+    porcentagem_bloqueio = (bloqueio_ponto / bloqueio_tentativa) * 100
+    porcentagem_ataque = (ataque_ponto / ataque_tentativa) * 100
+
+    print(f'Pontos de Saque: {porcentagem_saque:.2f} %.')
+    print(f'Pontos de Bloqueio: {porcentagem_bloqueio:.2f} %.')
+    print(f'Pontos de Ataque: {porcentagem_ataque:.2f} %.')
