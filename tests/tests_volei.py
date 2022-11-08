@@ -1,5 +1,5 @@
 from unittest import TestCase
-from volei import converte_para_lista_de_inteiros, coleta_tentativas_pontos, soma_tentativas_pontos
+from volei import converte_para_lista_de_inteiros, coleta_tentativas_pontos
 
 
 class TestesVolei(TestCase):

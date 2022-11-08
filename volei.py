@@ -55,10 +55,6 @@ def coleta_tentativas_pontos(tentativas_pontos: list, flag: str) -> int:
     return tentativa_ponto
 
 
-def soma_tentativas_pontos(tentativas_pontos: list) -> int:
-    return sum(tentativas_pontos)
-
-
 if __name__ == '__main__':
 
     N = int(input())
