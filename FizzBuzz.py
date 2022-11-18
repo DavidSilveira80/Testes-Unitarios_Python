@@ -58,3 +58,4 @@ def fizzbuzz(pos):
 print(fizzbuzz(35))
 print(algarismo_fizzbuzz(35))
 # Tentando configurar wakatime no github
+# Para mensurar atividades
