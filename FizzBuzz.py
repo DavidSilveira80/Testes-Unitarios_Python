@@ -59,3 +59,10 @@ print(fizzbuzz(35))
 print(algarismo_fizzbuzz(35))
 # Tentando configurar wakatime no github
 # Para mensurar atividades
+# mais um teste
+# testetando
+# teste Wakatime
+"""
+percebo que o wakatime conta o tempo pelas teclas.
+muito interessante. 
+"""
