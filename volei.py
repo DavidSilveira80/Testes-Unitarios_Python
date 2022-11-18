@@ -79,3 +79,5 @@ if __name__ == '__main__':
     print(f'Pontos de Saque: {porcentagem_saque:.2f} %.')
     print(f'Pontos de Bloqueio: {porcentagem_bloqueio:.2f} %.')
     print(f'Pontos de Ataque: {porcentagem_ataque:.2f} %.')
+
+# Resolver mais desafios implementando testes.
