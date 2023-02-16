@@ -1,5 +1,5 @@
 from unittest import TestCase
-import contando_letras_numeros
+from exercicios import contando_letras_numeros
 
 numeros = contando_letras_numeros.numeros
 converte_para_string = contando_letras_numeros.converte_para_string

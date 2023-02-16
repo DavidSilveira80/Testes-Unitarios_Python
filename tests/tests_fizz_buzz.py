@@ -1,5 +1,5 @@
 from unittest import TestCase
-from FizzBuzz import algarismo_fizzbuzz, fizzbuzz
+from exercicios.FizzBuzz import algarismo_fizzbuzz, fizzbuzz
 
 
 class TestFizzBuzz(TestCase):

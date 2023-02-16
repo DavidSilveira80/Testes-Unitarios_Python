@@ -1,5 +1,5 @@
 from unittest import TestCase
-from volei import coleta_tentativas_pontos
+from exercicios.volei import coleta_tentativas_pontos
 
 
 class TestesVolei(TestCase):

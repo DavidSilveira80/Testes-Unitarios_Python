@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from criptografia import criptografa_minusculas_maiusculas, criptografa_char, inverte_texto, divide_string, \
+from exercicios.criptografia import criptografa_minusculas_maiusculas, criptografa_char, inverte_texto, divide_string, \
     particiona_texto, tres_requisitos
 
 

@@ -1,5 +1,5 @@
 from unittest import TestCase
-from entre_letras import alfabeto, verifica_ordem_alfabetica, verifica_entre_letras, numero_letras_entre_letras
+from exercicios.entre_letras import alfabeto, verifica_ordem_alfabetica, verifica_entre_letras, numero_letras_entre_letras
 
 
 class TestEntreLetras(TestCase):
